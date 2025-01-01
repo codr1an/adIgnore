@@ -5,7 +5,6 @@
     if (!videoElement.muted) {
       isAdMutedByScript = true;
       videoElement.muted = true;
-      console.log("Video muted by script");
     }
   };
 
@@ -16,19 +15,17 @@
     }
   };
 
+  // youtube security policy does not allow to simulate click on skip button so this function is not working
   const skipAd = () => {
     const skipButton = document.querySelector(".ytp-skip-ad-button");
     if (skipButton) {
       skipButton.click();
-      console.log("Ad skipped");
     }
   };
 
   const handleAdPlayback = () => {
     const player = document.querySelector(".html5-video-player");
     if (player && player.classList.contains("ad-showing")) {
-      console.log("Ad is playing");
-
       const videoElement = player.querySelector("video");
       if (videoElement) {
         muteAdVideo(videoElement);
