@@ -4,7 +4,7 @@ Ad Ignore is a Chrome extension designed to enhance your YouTube viewing experie
 
 ## Motivation
 
-Since most ad blockers don't work on YouTube anymore, or only work for a few days before YouTube notices, I decided to create a lightweight ad ignore extension. This is a compromise between supporting the video creator and not being bothered by the ad. I like listening to YouTube videos while I'm doing other tasks, but I get annoyed by the ads. So, this extension mutes the videos, which is much better than dealing with obnoxious ads. This way, content creators get their money, and I can keep my sanity.
+Since most ad blockers no longer work reliably on YouTube, I decided to create a lightweight extension as a compromise between supporting creators and avoiding annoyance. The extension mutes ads, letting me enjoy videos without hearing intrusive slogans. This way, creators still earn revenue, and I keep my sanity while multitasking.
 
 ## Features
 
@@ -15,6 +15,9 @@ Since most ad blockers don't work on YouTube anymore, or only work for a few day
 ## Installation
 
 1. Clone the repository to your local machine
+   ```bash
+   git clone https://github.com/codr1an/adIgnore.git
+   ```
 2. Open Chrome and navigate to `chrome://extensions/`.
 3. Enable "Developer mode" by toggling the switch in the top right corner.
 4. Click on "Load unpacked" and select the directory where you cloned the repository.
