@@ -17,10 +17,10 @@
 
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": ["scripts/youTubeScript.js"],
       "matches": [
-        "https://developer.chrome.com/docs/extensions/*",
-        "https://developer.chrome.com/docs/webstore/*"
+        "https://www.youtube.com/*",
+        "http://127.0.0.1:5500/test.html"
       ]
     }
   ]
