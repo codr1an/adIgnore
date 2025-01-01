@@ -1,42 +1,49 @@
-//ytp-time-current
-//ytp-time-duration
-//ytp-skip-ad-button__text
-//video-ads ytp-ad-module
-//ytp-ad-player-overlay-layout__ad-info-container
-//ad-simple-attributed-string
-//ad-simple-attributed-string
-//1 of 2 arialabel
-
-console.log("e mande adihw");
-
 (function () {
   let isAdMutedByScript = false;
 
-  const observer = new MutationObserver(() => {
-    const player = document.querySelector(".html5-video-player");
+  const muteAdVideo = (videoElement) => {
+    if (!videoElement.muted) {
+      isAdMutedByScript = true;
+      videoElement.muted = true;
+      console.log("Video muted by script");
+    }
+  };
 
+  const unmuteVideo = (videoElement) => {
+    if (isAdMutedByScript) {
+      videoElement.muted = false;
+      isAdMutedByScript = false;
+    }
+  };
+
+  const skipAd = () => {
+    const skipButton = document.querySelector(".ytp-skip-ad-button");
+    if (skipButton) {
+      skipButton.click();
+      console.log("Ad skipped");
+    }
+  };
+
+  const handleAdPlayback = () => {
+    const player = document.querySelector(".html5-video-player");
     if (player && player.classList.contains("ad-showing")) {
       console.log("Ad is playing");
 
       const videoElement = player.querySelector("video");
       if (videoElement) {
-        if (!videoElement.muted) {
-          isAdMutedByScript = true;
-          videoElement.muted = true;
-          console.log("Video muted by script");
-        }
+        muteAdVideo(videoElement);
       }
-    } else if (player) {
-      console.log("No ad is playing");
 
+      skipAd();
+    } else if (player) {
       const videoElement = player.querySelector("video");
-      if (videoElement && isAdMutedByScript) {
-        videoElement.muted = false;
-        isAdMutedByScript = false;
-        console.log("Video unmuted by script");
+      if (videoElement) {
+        unmuteVideo(videoElement);
       }
     }
-  });
+  };
+
+  const observer = new MutationObserver(handleAdPlayback);
 
   observer.observe(document.body, {
     childList: true,
