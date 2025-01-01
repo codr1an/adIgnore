@@ -1,0 +1,59 @@
+.pop-up-container {
+  width: 220px;
+  height: 130px;
+  overflow: auto;
+}
+
+.pop-up-container h1 {
+  font-size: 20px;
+  color: rgb(104, 87, 82);
+  padding: 1%;
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 5px;
+  width: 95%;
+}
+
+.ad-info {
+  height: 40%;
+  width: 100%;
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  text-align: center;
+}
+
+.pop-up-container h2 {
+  font-size: 16px;
+  color: rgb(104, 87, 82);
+  margin-left: 5px;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.ad-info p {
+  font-size: 14px;
+}
+
+.ads-muted,
+.ads-skipped {
+  height: 30%;
+  width: 99%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: rgb(104, 87, 82);
+  padding: 2%;
+}
+
+.number {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.separator {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}

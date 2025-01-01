@@ -1,0 +1,24 @@
+{
+  "name": "Ad Ignore",
+  "description": "Mute (and skip) ads.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/logo-128.png"
+  },
+
+  "icons": {
+    "16": "images/logo-16.png",
+    "32": "images/logo-32.png",
+    "48": "images/logo-48.png",
+    "128": "images/logo-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["scripts/youTubeScript.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
